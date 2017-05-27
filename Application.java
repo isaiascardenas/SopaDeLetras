@@ -1,9 +1,7 @@
-import java.util.*;
-
-class Entrega2 {
-
-	public static void main(String[] args) {
-
+public class Application
+{
+	public void run()
+	{
 		FileManager file = new FileManager();
 		LetterSoup soup = new LetterSoup();
 
