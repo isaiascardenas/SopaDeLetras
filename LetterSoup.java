@@ -59,7 +59,7 @@ public class LetterSoup
 					this.coordinates.set(1, j);
 					set.add(Arrays.asList(i,j));
 					this.currentChar = 1;
-					if (this.breadthFirstSearch(word, lastPositions, backFrom, set)) {
+					if (this.depthFirstSearch(word, lastPositions, backFrom, set)) {
 						this.findingWords.add(0, word);
 						break;
 					}			
@@ -68,7 +68,7 @@ public class LetterSoup
 		}
 	}
 
-	public boolean breadthFirstSearch(String word, List<String> lastPositions, List<String> backFrom, List<List<Integer>> positionsSet)
+	public boolean depthFirstSearch(String word, List<String> lastPositions, List<String> backFrom, List<List<Integer>> positionsSet)
 	{
 		List<Integer> position = new ArrayList<Integer>(Arrays.asList(0,0));
 
@@ -92,7 +92,7 @@ public class LetterSoup
 							this.currentChar = this.currentChar+1;
 							backFrom.add(0, direction);
 							lastPositions.add(0, "back");
-							return this.breadthFirstSearch(word, lastPositions, backFrom, positionsSet);
+							return this.depthFirstSearch(word, lastPositions, backFrom, positionsSet);
 						}
 						break;
 					case "right":
@@ -104,7 +104,7 @@ public class LetterSoup
 							this.currentChar = this.currentChar+1;
 							backFrom.add(0, direction);
 							lastPositions.add(0, "back");
-							return this.breadthFirstSearch(word, lastPositions, backFrom, positionsSet);
+							return this.depthFirstSearch(word, lastPositions, backFrom, positionsSet);
 						}
 						break;
 					case "up":
@@ -116,7 +116,7 @@ public class LetterSoup
 							this.currentChar = this.currentChar+1;
 							backFrom.add(0, direction);
 							lastPositions.add(0, "back");
-							return this.breadthFirstSearch(word, lastPositions, backFrom, positionsSet);
+							return this.depthFirstSearch(word, lastPositions, backFrom, positionsSet);
 						}
 						break;
 					case "down":
@@ -128,7 +128,7 @@ public class LetterSoup
 							this.currentChar = this.currentChar+1;
 							backFrom.add(0, direction);
 							lastPositions.add(0, "back");
-							return this.breadthFirstSearch(word, lastPositions, backFrom, positionsSet);
+							return this.depthFirstSearch(word, lastPositions, backFrom, positionsSet);
 						}
 						break;
 					case "back":

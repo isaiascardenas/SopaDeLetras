@@ -59,12 +59,26 @@ Se almacenará la sopa de letras en una matriz creada con ArrayList<String> de m
 
 * FileManager: Es la clase que administra los ficheros que se leerán y se escribirán, si el archivo de salida no existe la clase lo crea con el contenido correspondiente.
 
-* LetterSoup: Ésta clase se encarga de manipular la sopa de letras para buscar las palabras solicitadas, implementa el método Busqueda en espacio de estados 
+* LetterSoup: Ésta clase se encarga de manipular la sopa de letras para buscar las palabras solicitadas, implementa el método Busqueda en espacio de estados de manera recursiva.
 
+* Application: La clase Application relaciona las dos clases mencionadas anteriormente, instancia un objeto FileManager y un objeto LetterSoup para realizar los objetivos de éste programa.
 
+La interacción de estas clases se ilustran en la figura 5
 
+(figura 5)
 
+La funcionalidad principal se centra en el método depthFirstSearch de la clase LetterSoup, realiza una busqueda en profundidad en la sopa de letras. Para encontrar la palabra dentro de la sopa de letras se genera una pila que guardará los Strings de las direcciones adyacentes para buscar la siguiente letra ademas de el String "back" que servirá para realizar el backtraking en caso de que se haya escogido la direccion equivocada, en el fondo de la pila se guarda el String "notFoud" que indica que la palabra no ha sido encontrada. Se extraen las direcciones desde la pila para buscar la letra correspondiente y encaso de que ese extraiga el String "back" se regresará a la posicion anterior y se buscará en otra dirección, cada vez que cambia la letra a buscar se agregan nuevas direcciones y un "back". Cuando se encuentra la letra se ingresa nuevamente al metodo para buscar la letra que sigue, el  proceso se repite hasta que la pila esté vacia o hasta que se hayan recorrido todas las letras de la palabra.
 
+En caso de que se haya recorrido toda la palabra ésta habrá sido encontrada y se retornara "true", en otro caso se habrá llegado hasta el fondo de la pila en donde estaba el String "notFound" lo que indica que la palabra no ha sido encontrada retornando "false".
 
+Cada palabra en el archivo de entrada (Palabras.in) se busca utilizando el metodo depthFirstSearch y cada palabra encontrada se guarda en el ArrayList findingWords, de manera que al final del proceso se puedan obtener las palabras que no se encontraron removiendo el contenido de findingWords del archivo de entrada. Luego de haber buscado todas las palabras se escribe en el archivo de salida (Solucion.out) las palabras encontradas y las que no.
+
+El proceso descrito se ilustra en el diagrama de flujo de la figura 6.
+
+(figura 6)
+
+# Conclusiones
+
+En resumen el proyecto cumple con las especificaciones requeridas y en el plazo solicitado, a modo de ejemplo se adjuntan 3 ejemplos con diferentes archivos de entrada obteniendo los resultados esperados...
 
 
