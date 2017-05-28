@@ -46,7 +46,7 @@ public class LetterSoup
 		}
 	}
 
-	public void findWord(String word)
+	private void findWord(String word)
 	{
 		for (int j =0 ; j<this.soup.size(); j++) {
 			for (int i = 0; i < this.soup.get(j).length(); i ++) {
@@ -68,7 +68,7 @@ public class LetterSoup
 		}
 	}
 
-	public boolean depthFirstSearch(String word, List<String> lastPositions, List<String> backFrom, List<List<Integer>> positionsSet)
+	private boolean depthFirstSearch(String word, List<String> lastPositions, List<String> backFrom, List<List<Integer>> positionsSet)
 	{
 		List<Integer> position = new ArrayList<Integer>(Arrays.asList(0,0));
 
@@ -148,7 +148,7 @@ public class LetterSoup
 		return true;
 	}
 
-	public boolean canMoveTo(String direction)
+	private boolean canMoveTo(String direction)
 	{
 		switch (direction){
 			case "left":
@@ -177,7 +177,7 @@ public class LetterSoup
 		return true;
 	}
 
-	public void goBack(String direction)
+	private void goBack(String direction)
 	{
 		switch (direction){
 			case "left":

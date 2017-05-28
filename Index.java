@@ -1,6 +1,6 @@
 import java.util.*;
 
-class index {
+class Index {
 
 	public static void main(String[] args) {
 
